@@ -21,9 +21,15 @@ namespace TrailerCheck.Migrations
                     b.Property<int>("ID")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<string>("FirstName");
+                    b.Property<DateTime>("CreationDate");
 
-                    b.Property<string>("LastName");
+                    b.Property<string>("FirstName")
+                        .IsRequired()
+                        .HasAnnotation("MaxLength", 50);
+
+                    b.Property<string>("LastName")
+                        .IsRequired()
+                        .HasAnnotation("MaxLength", 50);
 
                     b.Property<DateTime>("RegistrationDate");
 
@@ -52,11 +58,14 @@ namespace TrailerCheck.Migrations
 
             modelBuilder.Entity("TrailerCheck.Models.Trailer", b =>
                 {
-                    b.Property<int>("TrailerID");
+                    b.Property<int>("TrailerID")
+                        .HasAnnotation("MaxLength", 7);
 
-                    b.Property<string>("Description");
+                    b.Property<string>("Description")
+                        .IsRequired();
 
-                    b.Property<string>("Model");
+                    b.Property<string>("ProductGroup")
+                        .IsRequired();
 
                     b.HasKey("TrailerID");
 

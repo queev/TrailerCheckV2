@@ -15,8 +15,9 @@ namespace TrailerCheck.Migrations
                 {
                     ID = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
-                    FirstName = table.Column<string>(nullable: true),
-                    LastName = table.Column<string>(nullable: true),
+                    CreationDate = table.Column<DateTime>(nullable: false),
+                    FirstName = table.Column<string>(maxLength: 50, nullable: false),
+                    LastName = table.Column<string>(maxLength: 50, nullable: false),
                     RegistrationDate = table.Column<DateTime>(nullable: false)
                 },
                 constraints: table =>
@@ -28,9 +29,9 @@ namespace TrailerCheck.Migrations
                 name: "Trailer",
                 columns: table => new
                 {
-                    TrailerID = table.Column<int>(nullable: false),
-                    Description = table.Column<string>(nullable: true),
-                    Model = table.Column<string>(nullable: true)
+                    TrailerID = table.Column<int>(maxLength: 7, nullable: false),
+                    Description = table.Column<string>(nullable: false),
+                    ProductGroup = table.Column<string>(nullable: false)
                 },
                 constraints: table =>
                 {

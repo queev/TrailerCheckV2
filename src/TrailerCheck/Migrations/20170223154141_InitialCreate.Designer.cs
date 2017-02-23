@@ -8,7 +8,7 @@ using TrailerCheck.Data;
 namespace TrailerCheck.Migrations
 {
     [DbContext(typeof(TrailerCheckContext))]
-    [Migration("20170220161706_InitialCreate")]
+    [Migration("20170223154141_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -22,9 +22,15 @@ namespace TrailerCheck.Migrations
                     b.Property<int>("ID")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<string>("FirstName");
+                    b.Property<DateTime>("CreationDate");
 
-                    b.Property<string>("LastName");
+                    b.Property<string>("FirstName")
+                        .IsRequired()
+                        .HasAnnotation("MaxLength", 50);
+
+                    b.Property<string>("LastName")
+                        .IsRequired()
+                        .HasAnnotation("MaxLength", 50);
 
                     b.Property<DateTime>("RegistrationDate");
 
@@ -53,11 +59,14 @@ namespace TrailerCheck.Migrations
 
             modelBuilder.Entity("TrailerCheck.Models.Trailer", b =>
                 {
-                    b.Property<int>("TrailerID");
+                    b.Property<int>("TrailerID")
+                        .HasAnnotation("MaxLength", 7);
 
-                    b.Property<string>("Description");
+                    b.Property<string>("Description")
+                        .IsRequired();
 
-                    b.Property<string>("Model");
+                    b.Property<string>("ProductGroup")
+                        .IsRequired();
 
                     b.HasKey("TrailerID");
 

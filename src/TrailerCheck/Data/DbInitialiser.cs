@@ -21,13 +21,13 @@ namespace TrailerCheck.Models
 
             var trailers = new Trailer[]
             {
-                new Trailer {TrailerID=709652, Model="DP120", Description="DP120 12' x 6'6\" x 6' Deck Tank & Front Flap"},
-                new Trailer {TrailerID=709231, Model="P8e", Description="P8e 8'2\" x 4'9\" Ramp 750kg"},
-                new Trailer {TrailerID=5136308, Model="LM105", Description="LM105 10' x 5'6\" Resin with Dropsides 2700kg"},
-                new Trailer {TrailerID=5136306, Model="LM85", Description="LM85 8' x 5' Resin with Dropsides 2700kg"},
-                new Trailer {TrailerID=5136307, Model="LM85", Description="LM85 8' x 5' Resin with Dropsides 2700kg"},
-                new Trailer {TrailerID=710761, Model="CT166", Description="CT166 16' x 6'6\" Resin with Dropsides 3ft Ramp 3500kg"},
-                new Trailer {TrailerID=710530, Model="GP106", Description="GP106 10' x 5'10\" Resin Low Side 175 x 16"}
+                new Trailer {TrailerID=709652, ProductGroup="DP120", Description="DP120 12' x 6'6\" x 6' Deck Tank & Front Flap"},
+                new Trailer {TrailerID=709231, ProductGroup="P8e", Description="P8e 8'2\" x 4'9\" Ramp 750kg"},
+                new Trailer {TrailerID=5136308, ProductGroup="LM105", Description="LM105 10' x 5'6\" Resin with Dropsides 2700kg"},
+                new Trailer {TrailerID=5136306, ProductGroup="LM85", Description="LM85 8' x 5' Resin with Dropsides 2700kg"},
+                new Trailer {TrailerID=5136307, ProductGroup="LM85", Description="LM85 8' x 5' Resin with Dropsides 2700kg"},
+                new Trailer {TrailerID=710761, ProductGroup="CT166", Description="CT166 16' x 6'6\" Resin with Dropsides 3ft Ramp 3500kg"},
+                new Trailer {TrailerID=710530, ProductGroup="GP106", Description="GP106 10' x 5'10\" Resin Low Side 175 x 16"}
             };
             foreach (Trailer t in trailers)
             {
@@ -37,14 +37,14 @@ namespace TrailerCheck.Models
 
             var owners = new Owner[]
             {
-                new Owner {FirstName="Carson", LastName="Alexander", RegistrationDate=DateTime.Parse("2017-02-20")},
-                new Owner {FirstName="Meredith", LastName="Alonso", RegistrationDate=DateTime.Parse("2017-02-20")},
-                new Owner {FirstName="Arturo", LastName="Anand", RegistrationDate=DateTime.Parse("2017-02-20")},
-                new Owner {FirstName="Gytis", LastName="Barzdukas", RegistrationDate=DateTime.Parse("2017-02-20")},
-                new Owner {FirstName="Yan", LastName="Li", RegistrationDate=DateTime.Parse("2017-02-20")},
-                new Owner {FirstName="Peggy", LastName="Justice", RegistrationDate=DateTime.Parse("2017-02-20")},
-                new Owner {FirstName="Laura", LastName="Norman", RegistrationDate=DateTime.Parse("2017-02-20")},
-                new Owner {FirstName="Nino", LastName="Olivetto", RegistrationDate=DateTime.Parse("2017-02-20")},
+                new Owner {FirstName="Carson", LastName="Alexander", CreationDate=DateTime.UtcNow, RegistrationDate=DateTime.Parse("2017-02-20")},
+                new Owner {FirstName="Meredith", LastName="Alonso", CreationDate=DateTime.UtcNow, RegistrationDate=DateTime.Parse("2017-02-20")},
+                new Owner {FirstName="Arturo", LastName="Anand", CreationDate=DateTime.UtcNow, RegistrationDate=DateTime.Parse("2017-02-20")},
+                new Owner {FirstName="Gytis", LastName="Barzdukas", CreationDate=DateTime.UtcNow, RegistrationDate=DateTime.Parse("2017-02-20")},
+                new Owner {FirstName="Yan", LastName="Li", CreationDate=DateTime.UtcNow, RegistrationDate=DateTime.Parse("2017-02-20")},
+                new Owner {FirstName="Peggy", LastName="Justice", CreationDate=DateTime.UtcNow, RegistrationDate=DateTime.Parse("2017-02-20")},
+                new Owner {FirstName="Laura", LastName="Norman", CreationDate=DateTime.UtcNow, RegistrationDate=DateTime.Parse("2017-02-20")},
+                new Owner {FirstName="Nino", LastName="Olivetto", CreationDate=DateTime.UtcNow, RegistrationDate=DateTime.Parse("2017-02-20")},
             };
             foreach (Owner o in owners)
             {

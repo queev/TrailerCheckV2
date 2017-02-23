@@ -1,0 +1,58 @@
+@model TrailerCheck.Models.Trailer
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Trailer</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.TrailerID)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.TrailerID)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Description)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.ProductGroup)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ProductGroup)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Registrations)
+        </dt>
+        <dd>
+            <table class="table">
+                <tr>
+                    <th>Full Name</th>
+                    <th>Registration Date</th>
+                </tr>
+                @foreach (var item in Model.Registrations)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Owner.FullName)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Owner.RegistrationDate)
+                        </td>
+                    </tr>
+                }
+            </table>
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.TrailerID">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>
