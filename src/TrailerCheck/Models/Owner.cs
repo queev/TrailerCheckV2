@@ -25,7 +25,7 @@ namespace TrailerCheck.Models
         [DisplayFormat(DataFormatString = "{0:yyy-MM-dd}", ApplyFormatInEditMode = true)]
         public DateTime RegistrationDate { get; set; }
 
-        public DateTime CreationDate { get; set; }
+        public DateTime CreationDate { get; set; } = DateTime.UtcNow;
 
         [Display(Name = "Full Name")]
         public string FullName

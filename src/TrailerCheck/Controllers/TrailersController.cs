@@ -27,7 +27,7 @@ namespace TrailerCheck.Controllers
 
             if (!string.IsNullOrWhiteSpace(searchTrailerID))
             {
-                trailers = trailers.Where(m => m.TrailerID.ToString() == searchTrailerID);
+                trailers = trailers.Where(m => m.TrailerID.ToString().Contains(searchTrailerID));
             }
 
             return View(await trailers.ToListAsync());
@@ -66,7 +66,7 @@ namespace TrailerCheck.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("TrailerID,Description,Model")] Trailer trailer)
+        public async Task<IActionResult> Create([Bind("TrailerID,Description,ProductGroup")] Trailer trailer)
         {
             if (ModelState.IsValid)
             {
