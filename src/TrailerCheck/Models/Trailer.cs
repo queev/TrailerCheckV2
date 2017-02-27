@@ -13,7 +13,9 @@ namespace TrailerCheck.Models
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         [Display(Name = "Serial Number")]
         [RegularExpression(@"^[0-9]+$")]
-        [StringLength(7, MinimumLength = 4)]
+        [MinLength(4)]
+        [MaxLength(7)]
+        //[StringLength(7, MinimumLength = 4)]
         public int TrailerID { get; set; }
 
         [Required]

@@ -16,13 +16,21 @@ namespace TrailerCheck.Controllers
 
         public TrailersController(TrailerCheckContext context)
         {
-            _context = context;    
+            _context = context;
         }
 
         // GET: Trailers
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(string searchTrailerID)
         {
-            return View(await _context.Trailers.ToListAsync());
+            var trailers = from t in _context.Trailers
+                         select t;
+
+            if (!string.IsNullOrWhiteSpace(searchTrailerID))
+            {
+                trailers = trailers.Where(m => m.TrailerID.ToString() == searchTrailerID);
+            }
+
+            return View(await trailers.ToListAsync());
         }
 
         // GET: Trailers/Details/5
